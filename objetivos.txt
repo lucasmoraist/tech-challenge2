@@ -1,0 +1,2 @@
+Criar uma entidade teacher: id, name
+Criar uma entidade post: id, title, content, teacher_id
