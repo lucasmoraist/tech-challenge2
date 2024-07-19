@@ -11,8 +11,8 @@ export async function UpdatePost(request: FastifyRequest, reply: FastifyReply) {
   const { postId } = registerParamsSchema.parse(request.params);
 
   const registerBodySchema = z.object({
-    title: z.string(),
-    content: z.string(),
+    title: z.string().optional(),
+    content: z.string().optional(),
   });
 
   const { title, content } = registerBodySchema.parse(request.body);

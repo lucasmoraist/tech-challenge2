@@ -1,2 +1,4 @@
 /node_modules/
 .env
+docker_build_generate.sh
+

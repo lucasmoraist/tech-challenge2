@@ -15,7 +15,5 @@ export async function deletePost(request: FastifyRequest, reply: FastifyReply) {
 
   if (!result) throw new ResourceNotFoundError();
 
-  return reply
-    .status(200)
-    .send({ message: `Post deletado com sucesso`, post: result });
+  return reply.status(200).send({ id: result.id });
 }

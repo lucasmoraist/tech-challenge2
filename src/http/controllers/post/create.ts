@@ -6,7 +6,7 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
     title: z.string(),
     content: z.string(),
-    teacher_id: z.coerce.string(),
+    teacher_id: z.coerce.number(),
   });
 
   const { title, content, teacher_id } = registerBodySchema.parse(request.body);

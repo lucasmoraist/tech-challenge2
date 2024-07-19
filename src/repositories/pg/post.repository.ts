@@ -2,6 +2,7 @@ import { IPost } from "@/entities/models/post.interface";
 import { IPostRepository } from "../post.repository.interface";
 import { database } from "@/lib/pg/db";
 import { ITeacher } from "@/entities/models/teacher.interface";
+import { IPostUpdate } from "@/entities/models/post.update.interface";
 
 export class PostRepository implements IPostRepository {
   async getAll(
@@ -53,12 +54,13 @@ export class PostRepository implements IPostRepository {
 
   async updatePost(
     postId: string,
-    { title, content }: IPost
+    { title, content }: IPostUpdate
   ): Promise<IPost | null> {
+    console.log(title, content);
     const result = await database.clientInstance?.query(
       `
       UPDATE post
-      SET title = $1, content = $2
+      SET title = COALESCE($1, title), content = COALESCE($2, content)
       WHERE post.id = $3
       RETURNING *
       `,
@@ -77,7 +79,7 @@ export class PostRepository implements IPostRepository {
       `,
       [postId]
     );
-    console.log(result?.rows[0]);
+
     return result?.rows[0];
   }
 }

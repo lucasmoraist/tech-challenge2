@@ -7,6 +7,7 @@ const CONFIG = {
   user: env.POSTGRES_USER,
   password: env.POSTGRES_PASSWORD,
   database: env.POSTGRES_DB,
+  ssl: true,
 };
 
 class Database {
