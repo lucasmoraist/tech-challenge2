@@ -11,7 +11,11 @@ import swaggerUi from "@fastify/swagger-ui";
 
 export const app = fastify({ logger: true });
 
-app.register(cors);
+app.register(cors, {
+  origin: "*",
+  allowedHeaders: "*",
+  methods: "*",
+});
 
 app.register(swagger, {
   openapi: {
