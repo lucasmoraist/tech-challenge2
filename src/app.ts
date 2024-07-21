@@ -31,7 +31,7 @@ app.register(swagger, {
         description: "Production",
       },
       {
-        url: "http://localhost:3000",
+        url: "http://localhost:3000/",
         description: "Development",
       },
     ],
@@ -47,7 +47,7 @@ app.register(swagger, {
 });
 
 app.register(swaggerUi, {
-  routePrefix: "/doc",
+  routePrefix: "/",
 });
 
 app.register(fastifyJwt, {
