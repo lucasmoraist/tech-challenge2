@@ -1,14 +1,13 @@
-import { IPost } from "@/entities/models/post.interface";
+import { database } from "../../lib/pg/db";
 import { IPostRepository } from "../post.repository.interface";
-import { database } from "@/lib/pg/db";
-import { ITeacher } from "@/entities/models/teacher.interface";
-import { IPostUpdate } from "@/entities/models/post.update.interface";
+import { PostTeacherType } from "@/types/post-teacher.type";
+import { Post } from "@/entities/post.entity";
+import { PostUpdateType } from "@/types/post-update.type";
+import { PostListType } from "@/types/post-list-type";
+import { PostSearchType } from "@/types/post-search-type";
 
 export class PostRepository implements IPostRepository {
-  async getAll(
-    page: number,
-    limit: number
-  ): Promise<(IPost & ITeacher)[] | []> {
+  async getAll(page: number, limit: number): Promise<PostTeacherType[] | []> {
     const offset = (page - 1) * limit;
 
     const result = await database.clientInstance?.query(
@@ -25,7 +24,20 @@ export class PostRepository implements IPostRepository {
     return result?.rows || [];
   }
 
-  async getOne(postId: string): Promise<(IPost & ITeacher) | null> {
+  async getList(page: number, limit: number): Promise<PostListType[] | []> {
+    const offset = (page - 1) * limit;
+    const result = await database.clientInstance?.query(
+      `
+      SELECT post.id, post.title, post.createdat FROM post
+      LIMIT $1 OFFSET $2
+      `,
+      [limit, offset]
+    );
+
+    return result?.rows || [];
+  }
+
+  async getOne(postId: string): Promise<PostTeacherType | null> {
     const result = await database.clientInstance?.query(
       `
       SELECT post.id, post.title, post.content, post.createdAt, teacher.id as idTeacher, teacher.name, teacher.school_subject
@@ -36,10 +48,23 @@ export class PostRepository implements IPostRepository {
       `,
       [postId]
     );
-    return result?.rows[0];
+    return result?.rows[0] || null;
   }
 
-  async create({ title, content, teacher_id }: IPost): Promise<IPost> {
+  async search(term: string): Promise<PostSearchType[] | []> {
+    const result = await database.clientInstance?.query(
+      `
+      SELECT post.id, post.title, post.content
+      FROM post
+      WHERE post.title ILIKE $1 OR post.content ILIKE $1
+      `,
+      [`%${term}%`]
+    );
+
+    return result?.rows || [];
+  }
+
+  async create({ title, content, teacher_id }: Post): Promise<Post> {
     const now = new Date();
 
     const result = await database.clientInstance?.query(
@@ -54,9 +79,8 @@ export class PostRepository implements IPostRepository {
 
   async updatePost(
     postId: string,
-    { title, content }: IPostUpdate
-  ): Promise<IPost | null> {
-    console.log(title, content);
+    { title, content }: PostUpdateType
+  ): Promise<Post | null> {
     const result = await database.clientInstance?.query(
       `
       UPDATE post
@@ -66,11 +90,11 @@ export class PostRepository implements IPostRepository {
       `,
       [title, content, postId]
     );
-    console.log(result?.rows[0]);
-    return result?.rows[0];
+
+    return result?.rows[0] || null;
   }
 
-  async deletePost(postId: string): Promise<IPost | null> {
+  async deletePost(postId: string): Promise<Post | null> {
     const result = await database.clientInstance?.query(
       `
       DELETE FROM post
@@ -80,6 +104,6 @@ export class PostRepository implements IPostRepository {
       [postId]
     );
 
-    return result?.rows[0];
+    return result?.rows[0] || null;
   }
 }

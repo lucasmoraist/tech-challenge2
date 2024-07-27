@@ -1,6 +1,4 @@
-import { IPost } from "./models/post.interface";
-
-export class Post implements IPost {
+export interface Post {
   id?: string | undefined;
   title: string;
   content: string;

@@ -10,22 +10,38 @@ import { getAllPostSchema } from "@/lib/helper/swagger/post/get-all-post-schema"
 import { getOnePostSchema } from "@/lib/helper/swagger/post/get-one-post.schema";
 import { updatePostSchema } from "@/lib/helper/swagger/post/update-post-schema";
 import { removePostSchema } from "@/lib/helper/swagger/post/remove-post-schema";
+import { getList } from "./getList";
+import { getListPostSchema } from "@/lib/helper/swagger/post/get-list-post-schema";
+import { Search } from "./searchPost";
+import { searchPostSchema } from "@/lib/helper/swagger/post/search-post-schema";
 
 export async function postRoutes(app: FastifyInstance) {
-  app.get("/post", getAllPostSchema, getAll);
-  app.get("/post/:postId", getOnePostSchema, getOne);
+  app.get(
+    "/posts/admin",
+    { schema: getAllPostSchema, onRequest: [jwtValidate] },
+    getAll
+  );
+
+  app.get("/posts", getListPostSchema, getList);
+
+  app.get("/posts/:postId", getOnePostSchema, getOne);
+
   app.post(
-    "/post",
+    "/posts",
     { schema: createPostSchema, onRequest: [jwtValidate] },
     create
   );
+
+  app.get("/posts/search", searchPostSchema, Search);
+
   app.put(
-    "/post/:postId",
+    "/posts/:postId",
     { schema: updatePostSchema, onRequest: [jwtValidate] },
     UpdatePost
   );
+
   app.delete(
-    "/post/:postId",
+    "/posts/:postId",
     { schema: removePostSchema, onRequest: [jwtValidate] },
     deletePost
   );

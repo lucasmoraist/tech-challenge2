@@ -1,11 +1,15 @@
-import { IPost } from "@/entities/models/post.interface";
-import { IPostUpdate } from "@/entities/models/post.update.interface";
-import { ITeacher } from "@/entities/models/teacher.interface";
+import { Post } from "@/entities/post.entity";
+import { PostListType } from "@/types/post-list-type";
+import { PostSearchType } from "@/types/post-search-type";
+import { PostTeacherType } from "@/types/post-teacher.type";
+import { PostUpdateType } from "@/types/post-update.type";
 
 export interface IPostRepository {
-  getAll(page: number, limit: number): Promise<(IPost & ITeacher)[] | []>;
-  getOne(postId: string): Promise<(IPost & ITeacher) | null>;
-  create(post: IPost): Promise<IPost>;
-  updatePost(postId: string, post: IPostUpdate): Promise<IPost | null>;
-  deletePost(postId: string): Promise<IPost | null>;
+  getAll(page: number, limit: number): Promise<PostTeacherType[] | []>;
+  getList(page: number, limit: number): Promise<PostListType[] | []>;
+  getOne(postId: string): Promise<PostTeacherType | null>;
+  search(term: string): Promise<PostSearchType[] | []>;
+  create(post: Post): Promise<Post>;
+  updatePost(postId: string, post: PostUpdateType): Promise<Post | null>;
+  deletePost(postId: string): Promise<Post | null>;
 }

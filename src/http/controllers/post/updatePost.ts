@@ -18,6 +18,7 @@ export async function UpdatePost(request: FastifyRequest, reply: FastifyReply) {
   const { title, content } = registerBodySchema.parse(request.body);
 
   const updatePostUseCase = makeUpdatePostUseCase();
+
   const result = await updatePostUseCase.handler(postId, { title, content });
 
   if (!result) throw new ResourceNotFoundError();

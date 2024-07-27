@@ -1,7 +1,7 @@
 export const updatePostSchema = {
   summary: "Update post",
   description: "This method updates one post by id",
-  tags: ["post"],
+  tags: ["posts"],
   security: [{ bearerAuth: [] }],
   params: {
     postId: { type: "string", format: "uuid", description: "id of post" },
@@ -18,8 +18,11 @@ export const updatePostSchema = {
       description: "Successful response",
       type: "object",
       properties: {
+        id: { type: "string" },
         title: { type: "string" },
         content: { type: "string" },
+        createdat: { type: "string" },
+        teacher_id: { type: "number" },
       },
     },
   },

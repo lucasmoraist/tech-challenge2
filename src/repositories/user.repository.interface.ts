@@ -1,6 +1,6 @@
-import { IUser } from "@/entities/models/user.interface";
+import { User } from "@/entities/user.entity";
 
 export interface IUserRepository {
-  create(user: IUser): Promise<IUser>;
-  signin(username: string): Promise<IUser | null>;
+  create(user: User): Promise<User>;
+  signin(username: string): Promise<User | null>;
 }

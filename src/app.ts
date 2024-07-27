@@ -8,8 +8,9 @@ import fastifyJwt from "@fastify/jwt";
 import { env } from "./env";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
+import { swaggerConfig } from "./lib/helper/swagger/swagger-config";
 
-export const app = fastify({ logger: true });
+export const app = fastify({ logger: false });
 
 app.register(cors, {
   origin: "*",
@@ -17,34 +18,36 @@ app.register(cors, {
   methods: "*",
 });
 
-app.register(swagger, {
-  openapi: {
-    openapi: "3.0.0",
-    info: {
-      title: "BLOGGING",
-      description: "Tech Challenge 2 - Grupo 8",
-      version: "0.1.0",
-    },
-    servers: [
-      {
-        url: "https://tech-challenge2.grupo8.tech/",
-        description: "Production",
-      },
-      {
-        url: "http://localhost:3000/",
-        description: "Development",
-      },
-    ],
-    components: {
-      securitySchemes: {
-        bearerAuth: {
-          type: "http",
-          scheme: "bearer",
-        },
-      },
-    },
-  },
-});
+// app.register(swagger, {
+//   openapi: {
+//     openapi: "3.0.0",
+//     info: {
+//       title: "BLOGGING",
+//       description: "Tech Challenge 2 - Grupo 8",
+//       version: "0.1.0",
+//     },
+//     servers: [
+//       {
+//         url: "https://tech-challenge2.grupo8.tech/",
+//         description: "Production",
+//       },
+//       {
+//         url: "http://localhost:3000/",
+//         description: "Development",
+//       },
+//     ],
+//     components: {
+//       securitySchemes: {
+//         bearerAuth: {
+//           type: "http",
+//           scheme: "bearer",
+//         },
+//       },
+//     },
+//   },
+// });
+
+app.register(swagger, swaggerConfig);
 
 app.register(swaggerUi, {
   routePrefix: "/",

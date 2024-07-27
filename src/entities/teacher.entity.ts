@@ -1,6 +1,4 @@
-import { ITeacher } from "./models/teacher.interface";
-
-export class Teacher implements ITeacher {
+export interface Teacher {
   id?: number | undefined;
   name: string;
   school_subject: string;

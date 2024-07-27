@@ -1,7 +1,7 @@
 export const removePostSchema = {
   summary: "Remove post",
   description: "This method removes one post by id",
-  tags: ["post"],
+  tags: ["posts"],
   security: [{ bearerAuth: [] }],
   params: {
     postId: { type: "string", format: "uuid", description: "id of post" },

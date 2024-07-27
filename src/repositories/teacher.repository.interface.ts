@@ -1,5 +1,5 @@
-import { ITeacher } from "@/entities/models/teacher.interface";
+import { Teacher } from "@/entities/teacher.entity";
 
 export interface ITeacherRepository {
-  create(teacher: ITeacher): Promise<ITeacher>;
+  create(teacher: Teacher): Promise<Teacher>;
 }

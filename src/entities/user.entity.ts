@@ -1,6 +1,4 @@
-import { IUser } from "./models/user.interface";
-
-export class User implements IUser {
+export interface User {
   id?: number | undefined;
   username: string;
   password: string;
