@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/http/controllers/post/routes.ts</title>
+    <title>Code coverage report for src/lib/pg/db-create.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/http/controllers/post</a> routes.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/lib/pg</a> db-create.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
@@ -111,7 +111,18 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -159,54 +170,76 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { FastifyInstance } from "fastify";</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { create } from "./create";</span>
-<span class="cstat-no" title="statement not covered" >import { getAll } from "./getAll";</span>
-<span class="cstat-no" title="statement not covered" >import { getOne } from "./getOne";</span>
-<span class="cstat-no" title="statement not covered" >import { jwtValidate } from "@/http/middlewares/jwt-validate";</span>
-<span class="cstat-no" title="statement not covered" >import { deletePost } from "./deletePost";</span>
-<span class="cstat-no" title="statement not covered" >import { UpdatePost } from "./updatePost";</span>
-<span class="cstat-no" title="statement not covered" >import { createPostSchema } from "@/lib/helper/swagger/post/create-post-schema";</span>
-<span class="cstat-no" title="statement not covered" >import { getAllPostSchema } from "@/lib/helper/swagger/post/get-all-post-schema";</span>
-<span class="cstat-no" title="statement not covered" >import { getOnePostSchema } from "@/lib/helper/swagger/post/get-one-post.schema";</span>
-<span class="cstat-no" title="statement not covered" >import { updatePostSchema } from "@/lib/helper/swagger/post/update-post-schema";</span>
-<span class="cstat-no" title="statement not covered" >import { removePostSchema } from "@/lib/helper/swagger/post/remove-post-schema";</span>
-<span class="cstat-no" title="statement not covered" >import { getList } from "./getList";</span>
-<span class="cstat-no" title="statement not covered" >import { getListPostSchema } from "@/lib/helper/swagger/post/get-list-post-schema";</span>
-<span class="cstat-no" title="statement not covered" >import { Search } from "./searchPost";</span>
-<span class="cstat-no" title="statement not covered" >import { searchPostSchema } from "@/lib/helper/swagger/post/search-post-schema";</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { database } from "./db";</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export async function postRoutes(app: FastifyInstance) {</span>
-<span class="cstat-no" title="statement not covered" >  app.get(</span>
-<span class="cstat-no" title="statement not covered" >    "/posts/admin",</span>
-<span class="cstat-no" title="statement not covered" >    { schema: getAllPostSchema, onRequest: [jwtValidate] },</span>
-<span class="cstat-no" title="statement not covered" >    getAll</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >const result: any[] = [];</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  app.get("/posts", getListPostSchema, getList);</span>
+<span class="cstat-no" title="statement not covered" >class DbCreate {</span>
+<span class="cstat-no" title="statement not covered" >  async dbGenerate() {</span>
+<span class="cstat-no" title="statement not covered" >    if (!database.clientInstance) {</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error("Database not connected");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  app.get("/posts/:postId", getOnePostSchema, getOne);</span>
+<span class="cstat-no" title="statement not covered" >    await database.clientInstance?.query(`</span>
+<span class="cstat-no" title="statement not covered" >      CREATE EXTENSION IF NOT EXISTS "uuid-ossp";</span>
+<span class="cstat-no" title="statement not covered" >      `);</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  app.post(</span>
-<span class="cstat-no" title="statement not covered" >    "/posts",</span>
-<span class="cstat-no" title="statement not covered" >    { schema: createPostSchema, onRequest: [jwtValidate] },</span>
-<span class="cstat-no" title="statement not covered" >    create</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    await database.clientInstance?.query(`</span>
+<span class="cstat-no" title="statement not covered" >      BEGIN;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  app.get("/posts/search", searchPostSchema, Search);</span>
+<span class="cstat-no" title="statement not covered" >      CREATE TABLE IF NOT EXISTS "user" (</span>
+<span class="cstat-no" title="statement not covered" >      id SERIAL primary key,</span>
+<span class="cstat-no" title="statement not covered" >      username VARCHAR(255) NOT NULL,</span>
+<span class="cstat-no" title="statement not covered" >      password VARCHAR(255) NOT NULL</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  app.put(</span>
-<span class="cstat-no" title="statement not covered" >    "/posts/:postId",</span>
-<span class="cstat-no" title="statement not covered" >    { schema: updatePostSchema, onRequest: [jwtValidate] },</span>
-<span class="cstat-no" title="statement not covered" >    UpdatePost</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >      COMMIT;</span>
+<span class="cstat-no" title="statement not covered" >      `);</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  app.delete(</span>
-<span class="cstat-no" title="statement not covered" >    "/posts/:postId",</span>
-<span class="cstat-no" title="statement not covered" >    { schema: removePostSchema, onRequest: [jwtValidate] },</span>
-<span class="cstat-no" title="statement not covered" >    deletePost</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+<span class="cstat-no" title="statement not covered" >    await database.clientInstance?.query(`</span>
+<span class="cstat-no" title="statement not covered" >      BEGIN;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        CREATE TABLE IF NOT EXISTS teacher (</span>
+<span class="cstat-no" title="statement not covered" >        id SERIAL PRIMARY KEY,</span>
+<span class="cstat-no" title="statement not covered" >        name VARCHAR(255) NOT NULL,</span>
+<span class="cstat-no" title="statement not covered" >        school_subject VARCHAR(255) NOT NULL,</span>
+<span class="cstat-no" title="statement not covered" >        user_id INT UNIQUE,</span>
+<span class="cstat-no" title="statement not covered" >        foreign key (user_id) references "user"(id)</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      COMMIT;</span>
+<span class="cstat-no" title="statement not covered" >      `);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    await database.clientInstance?.query(`</span>
+<span class="cstat-no" title="statement not covered" >        BEGIN;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          CREATE TABLE IF NOT EXISTS post(</span>
+<span class="cstat-no" title="statement not covered" >          id UUID primary key default uuid_generate_v4(),</span>
+<span class="cstat-no" title="statement not covered" >          title VARCHAR(255) NOT NULL,</span>
+<span class="cstat-no" title="statement not covered" >          content TEXT NOT NULL,</span>
+<span class="cstat-no" title="statement not covered" >          createdAt TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,</span>
+<span class="cstat-no" title="statement not covered" >          teacher_id INT NOT NULL,</span>
+<span class="cstat-no" title="statement not covered" >          foreign key (teacher_id) references teacher(id)</span>
+<span class="cstat-no" title="statement not covered" >          );</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        COMMIT;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        `);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >export const dbCreate = new DbCreate();</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -216,14 +249,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2024-07-28T14:42:53.225Z
             </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     

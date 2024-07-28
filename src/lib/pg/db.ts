@@ -1,5 +1,6 @@
 import { env } from "@/env";
 import { Pool, PoolClient } from "pg";
+import { dbCreate } from "./db-create";
 
 const CONFIG = {
   host: env.POSTGRES_HOST,
@@ -7,7 +8,7 @@ const CONFIG = {
   user: env.POSTGRES_USER,
   password: env.POSTGRES_PASSWORD,
   database: env.POSTGRES_DB,
-  ssl: true,
+  ssl: env.NODE_ENV === "production" ? true : false,
 };
 
 class Database {
@@ -22,6 +23,7 @@ class Database {
   private async connect() {
     try {
       this.client = await this.pool.connect();
+      dbCreate.dbGenerate();
     } catch (error) {
       console.error(`Error starting connect with database pg`);
       throw new Error(`Error starting connect with database pg`);
