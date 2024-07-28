@@ -33,4 +33,12 @@ export function globalErrorHandler(
   if (error instanceof InvalidCredentialError) {
     return reply.status(401).send({ message: error.message });
   }
+
+  if (env.NODE_ENV === "development") {
+    console.error(error);
+  }
+
+  if (error instanceof Error) {
+    return reply.status(500).send({ message: error.message });
+  }
 }

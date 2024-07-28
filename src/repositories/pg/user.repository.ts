@@ -1,6 +1,6 @@
 import { User } from "@/entities/user.entity";
-import { IUserRepository } from "../user.repository.interface";
-import { database } from "../../lib/pg/db";
+import { IUserRepository } from "@/repositories/user.repository.interface";
+import { database } from "@/lib/pg/db";
 
 export class UserRepository implements IUserRepository {
   async signin(username: string): Promise<User | null> {

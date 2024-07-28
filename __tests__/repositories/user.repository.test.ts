@@ -1,6 +1,6 @@
-import { User } from "../../src/entities/user.entity";
-import { UserRepository } from "../../src/repositories/pg/user.repository";
-import { database } from "../../src/lib/pg/db";
+import { User } from "@/entities/user.entity";
+import { UserRepository } from "@/repositories/pg/user.repository";
+import { database } from "@/lib/pg/db";
 
 jest.mock("../../src/lib/pg/db", () => ({
   database: {

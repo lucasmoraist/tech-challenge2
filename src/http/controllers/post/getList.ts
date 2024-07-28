@@ -13,6 +13,5 @@ export async function getList(request: FastifyRequest, reply: FastifyReply) {
   const getListPostUseCase = makeGetListPostUseCase();
   const result = await getListPostUseCase.handler(page, limit);
 
-  console.log(result);
   return reply.status(200).send(result);
 }

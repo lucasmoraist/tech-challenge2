@@ -1,5 +1,5 @@
-import { Teacher } from "../../src/entities/teacher.entity";
-import { ITeacherRepository } from "../../src/repositories/teacher.repository.interface";
+import { Teacher } from "@/entities/teacher.entity";
+import { ITeacherRepository } from "@/repositories/teacher.repository.interface";
 
 const teachers: Teacher[] = [
   {

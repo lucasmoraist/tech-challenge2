@@ -1,14 +1,14 @@
-import { GetOnePostUseCase } from "../../src/use-cases/get-one-post";
-import { GetAllPostUseCase } from "../../src/use-cases/get-all-post";
+import { GetOnePostUseCase } from "@/use-cases/get-one-post";
+import { GetAllPostUseCase } from "@/use-cases/get-all-post";
 import { PostRepositoryMock } from "../mocks/post-repository-mock";
-import { ResourceNotFoundError } from "../../src/use-cases/errors/resource-not-fount-error";
-import { CreatePostUseCase } from "../../src/use-cases/create-post";
-import { Post } from "../../src/entities/post.entity";
-import { UpdatePostUseCase } from "../../src/use-cases/update-post";
-import { PostUpdateType } from "../../src/types/post-update.type";
-import { DeletePostUseCase } from "../../src/use-cases/delete-post";
-import { GetListPostUseCase } from "../../src/use-cases/get-list-post";
-import { SearchPostUseCase } from "../../src/use-cases/search-post";
+import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-fount-error";
+import { CreatePostUseCase } from "@/use-cases/create-post";
+import { Post } from "@/entities/post.entity";
+import { UpdatePostUseCase } from "@/use-cases/update-post";
+import { PostUpdateType } from "@/types/post-update.type";
+import { DeletePostUseCase } from "@/use-cases/delete-post";
+import { GetListPostUseCase } from "@/use-cases/get-list-post";
+import { SearchPostUseCase } from "@/use-cases/search-post";
 
 describe("Post Use Cases", () => {
   it("GetAllPostUseCase - Should return a valid list of posts", async () => {

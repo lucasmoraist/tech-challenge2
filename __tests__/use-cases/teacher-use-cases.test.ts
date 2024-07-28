@@ -1,5 +1,5 @@
-import { Teacher } from "../../src/entities/teacher.entity";
-import { CreateTeacherUseCase } from "../../src/use-cases/create-teacher";
+import { Teacher } from "@/entities/teacher.entity";
+import { CreateTeacherUseCase } from "@/use-cases/create-teacher";
 import { TeacherRepositoryMock } from "../mocks/teacher-repository-mock";
 
 describe("Teacher Use Cases", () => {

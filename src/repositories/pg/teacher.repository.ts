@@ -1,6 +1,6 @@
 import { Teacher } from "@/entities/teacher.entity";
-import { ITeacherRepository } from "../teacher.repository.interface";
-import { database } from "../../lib/pg/db";
+import { ITeacherRepository } from "@/repositories/teacher.repository.interface";
+import { database } from "@/lib/pg/db";
 
 export class TeacherRepository implements ITeacherRepository {
   async create({ name, school_subject, user_id }: Teacher): Promise<Teacher> {

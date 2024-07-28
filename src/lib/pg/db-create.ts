@@ -1,7 +1,5 @@
 import { database } from "./db";
 
-const result: any[] = [];
-
 class DbCreate {
   async dbGenerate() {
     if (!database.clientInstance) {

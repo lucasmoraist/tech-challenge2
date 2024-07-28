@@ -1,6 +1,6 @@
-import { Teacher } from "../../src/entities/teacher.entity";
-import { TeacherRepository } from "../../src/repositories/pg/teacher.repository";
-import { database } from "../../src/lib/pg/db";
+import { Teacher } from "@/entities/teacher.entity";
+import { TeacherRepository } from "@/repositories/pg/teacher.repository";
+import { database } from "@/lib/pg/db";
 
 jest.mock("../../src/lib/pg/db", () => ({
   database: {

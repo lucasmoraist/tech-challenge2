@@ -10,12 +10,12 @@ export const swaggerConfig: SwaggerOptions = {
     },
     servers: [
       {
-        url: "https://tech-challenge2.grupo8.tech/",
-        description: "Production",
-      },
-      {
         url: "http://localhost:3000/",
         description: "Development",
+      },
+      {
+        url: "https://tech-challenge2.grupo8.tech/",
+        description: "Production",
       },
     ],
     components: {

@@ -1,5 +1,5 @@
-import { database } from "../../lib/pg/db";
-import { IPostRepository } from "../post.repository.interface";
+import { database } from "@/lib/pg/db";
+import { IPostRepository } from "@/repositories/post.repository.interface";
 import { PostTeacherType } from "@/types/post-teacher.type";
 import { Post } from "@/entities/post.entity";
 import { PostUpdateType } from "@/types/post-update.type";
