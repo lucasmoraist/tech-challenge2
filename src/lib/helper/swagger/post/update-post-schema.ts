@@ -1,7 +1,7 @@
 export const updatePostSchema = {
   summary: "Update post",
   description: "This method updates one post by id",
-  tags: ["posts"],
+  tags: ["v2"],
   security: [{ bearerAuth: [] }],
   params: {
     postId: { type: "string", format: "uuid", description: "id of post" },

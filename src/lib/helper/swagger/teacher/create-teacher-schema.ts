@@ -2,7 +2,7 @@ export const createTeacherSchema = {
   schema: {
     summary: "Teacher creation",
     description: "This method uncludes a new teacher",
-    tags: ["teacher"],
+    tags: ["v1"],
     body: {
       type: "object",
       required: ["name", "school_subject"],

@@ -2,7 +2,7 @@ export const getOnePostSchema = {
   schema: {
     summary: "Get one post",
     description: "This method returns one post by id",
-    tags: ["posts"],
+    tags: ["v1"],
     params: {
       postId: { type: "string", format: "uuid", description: "id of post" },
     },
