@@ -28,7 +28,7 @@ export class PostRepository implements IPostRepository {
     const offset = (page - 1) * limit;
     const result = await database.clientInstance?.query(
       `
-      SELECT post.id, post.title, post.createdat FROM post
+      SELECT post.id, post.title, post.content, post.urlimage, post.createdat FROM post
       LIMIT $1 OFFSET $2
       `,
       [limit, offset]
@@ -64,15 +64,15 @@ export class PostRepository implements IPostRepository {
     return result?.rows || [];
   }
 
-  async create({ title, content, teacher_id }: Post): Promise<Post> {
+  async create({ title, content, urlImage, teacher_id }: Post): Promise<Post> {
     const now = new Date();
 
     const result = await database.clientInstance?.query(
       `
-      INSERT INTO "post" (title, content, createdAt, teacher_id)
-      VALUES ($1, $2, $3, $4) RETURNING *
+      INSERT INTO "post" (title, content, urlImage, createdAt, teacher_id)
+      VALUES ($1, $2, $3, $4, $5) RETURNING *
       `,
-      [title, content, now, teacher_id]
+      [title, content, urlImage, now, teacher_id]
     );
     return result?.rows[0];
   }
