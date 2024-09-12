@@ -14,6 +14,7 @@ export const getOnePostSchema = {
           id: { type: "string", format: "uuid" },
           title: { type: "string" },
           content: { type: "string" },
+          urlimage: { type: "string" },
           createdat: {
             type: "string",
             format: "date",
