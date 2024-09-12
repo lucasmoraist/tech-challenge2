@@ -2,7 +2,7 @@ export const getListPostSchema = {
   schema: {
     summary: "Get list of post",
     description: "This method returns a list of posts",
-    tags: ["posts"],
+    tags: ["v1"],
     querystring: {
       page: {
         type: "number",
@@ -20,6 +20,8 @@ export const getListPostSchema = {
           properties: {
             id: { type: "string", format: "uuid" },
             title: { type: "string" },
+            content: { type: "string" },
+            urlimage: { type: "string" },
             createdat: {
               type: "string",
               format: "date",
