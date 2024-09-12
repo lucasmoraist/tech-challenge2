@@ -43,6 +43,7 @@ class DbCreate {
           id UUID primary key default uuid_generate_v4(),
           title VARCHAR(255) NOT NULL,
           content TEXT NOT NULL,
+          urlImage TEXT NOT NULL,
           createdAt TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,
           teacher_id INT NOT NULL,
           foreign key (teacher_id) references teacher(id)
