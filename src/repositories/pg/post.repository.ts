@@ -40,7 +40,7 @@ export class PostRepository implements IPostRepository {
   async getOne(postId: string): Promise<PostTeacherType | null> {
     const result = await database.clientInstance?.query(
       `
-      SELECT post.id, post.title, post.content, post.createdAt, teacher.id as idTeacher, teacher.name, teacher.school_subject
+      SELECT post.id, post.title, post.content, post.urlImage, post.createdAt, teacher.id as idTeacher, teacher.name, teacher.school_subject
       FROM post
       INNER JOIN teacher
       ON post.teacher_id = teacher.id
