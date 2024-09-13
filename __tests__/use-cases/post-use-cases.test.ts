@@ -79,6 +79,7 @@ describe("Post Use Cases", () => {
       id: "eb106388-27ed-4764-8de2-fad08496403d",
       title: "Leituras Bíblicas Parte 8882",
       content: "Content Leituras Bíblicas.....",
+      urlImage: "https://www.google.com.br",
       createdAt: new Date(),
       teacher_id: 1,
     };

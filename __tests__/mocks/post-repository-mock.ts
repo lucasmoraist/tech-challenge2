@@ -11,7 +11,8 @@ const posts: PostTeacherType[] = [
     title: "A guerra dos cem anos",
     content:
       "A Guerra dos Cem Anos é uma obra que conta uma série de conflitos travados entre os reinos da Inglaterra e da França durante o final da Idade Média ...",
-    createdAt: new Date("2024-07-20"),
+      urlImage: "https://www.google.com.br/image.png",
+      createdAt: new Date("2024-07-20"),
     teacher_id: 8,
     name: "Xuxa da Silva",
     school_subject: "História",
@@ -21,7 +22,8 @@ const posts: PostTeacherType[] = [
     title: "Os Lusíadas",
     content:
       "Os Lusíadas é uma obra de poesia épica do escritor português Luís Vaz de Camões, a primeira epopeia portuguesa publicada em versão impressa.",
-    createdAt: new Date("2024-07-20"),
+      urlImage: "https://www.google.com.br/image.png",
+      createdAt: new Date("2024-07-20"),
     teacher_id: 8,
     name: "Xuxa da Silva",
     school_subject: "História",
@@ -32,6 +34,7 @@ let post: Post = {
   id: "",
   title: "",
   content: "",
+  urlImage: "",
   createdAt: new Date(""),
   teacher_id: 0,
 };
