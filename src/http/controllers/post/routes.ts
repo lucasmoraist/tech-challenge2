@@ -17,7 +17,7 @@ import { searchPostSchema } from "@/lib/helper/swagger/post/search-post-schema";
 
 export async function postRoutes(app: FastifyInstance) {
   app.get(
-    "/posts/admin",
+    "/admin/posts",
     { schema: getAllPostSchema, onRequest: [jwtValidate] },
     getAll
   );
@@ -27,7 +27,7 @@ export async function postRoutes(app: FastifyInstance) {
   app.get("/posts/:postId", getOnePostSchema, getOne);
 
   app.post(
-    "/posts",
+    "/admin/posts",
     { schema: createPostSchema, onRequest: [jwtValidate] },
     create
   );
@@ -35,13 +35,13 @@ export async function postRoutes(app: FastifyInstance) {
   app.get("/posts/search", searchPostSchema, Search);
 
   app.put(
-    "/posts/:postId",
+    "/admin/posts/:postId",
     { schema: updatePostSchema, onRequest: [jwtValidate] },
     UpdatePost
   );
 
   app.delete(
-    "/posts/:postId",
+    "/admin/posts/:postId",
     { schema: removePostSchema, onRequest: [jwtValidate] },
     deletePost
   );

@@ -24,6 +24,7 @@ create table post(
 id UUID primary key,
 title varchar(50) not null,
 content text not null,
+urlImage text,
 createdAt TIMESTAMP without TIME zone not null
 )
 

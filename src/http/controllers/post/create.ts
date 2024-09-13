@@ -6,13 +6,14 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
     title: z.string(),
     content: z.string(),
+    urlImage: z.string(),
     teacher_id: z.coerce.number(),
   });
 
-  const { title, content, teacher_id } = registerBodySchema.parse(request.body);
+  const { title, content, urlImage, teacher_id } = registerBodySchema.parse(request.body);
 
   const createPostUseCase = makeCreatePostUseCase();
-  const post = await createPostUseCase.handler({ title, content, teacher_id });
+  const post = await createPostUseCase.handler({ title, content, urlImage, teacher_id });
 
   reply.status(201).send(post);
 }

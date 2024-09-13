@@ -5,7 +5,7 @@ export const swaggerConfig: SwaggerOptions = {
     openapi: "3.0.0",
     info: {
       title: "BLOGGING",
-      description: "Tech Challenge 2 - Grupo 8",
+      description: "Tech Challenge 2 - Grupo 8 \n- V1 - Requisições sem necessidade de autenticação \n- V2 - Requisições com necessidade de autenticação",
       version: "0.1.0",
     },
     servers: [

@@ -2,7 +2,7 @@ export const signinUserSchema = {
   schema: {
     summary: "User signin",
     description: "This method generates an access token for a registered user",
-    tags: ["user"],
+    tags: ["v1"],
     body: {
       type: "object",
       required: ["username", "password"],

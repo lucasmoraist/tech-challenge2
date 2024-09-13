@@ -2,7 +2,7 @@ export const createUserSchema = {
   schema: {
     summary: "User creation",
     description: "This method uncludes a new user",
-    tags: ["user"],
+    tags: ["v1"],
     body: {
       type: "object",
       required: ["username", "password"],
