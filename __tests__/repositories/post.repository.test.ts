@@ -26,6 +26,7 @@ describe("PostRepository", () => {
       id: "f590e0f8-fa84-4174-abf8-298f2770e557",
       title: "Leituras Bíblicas Parte 1",
       content: "Leituras Bíblicas Parte 1 content...",
+      urlImage: "https://www.google.com.br/image.png",
       createdAt: new Date(),
       teacher_id: 10,
     };
@@ -66,6 +67,7 @@ describe("PostRepository", () => {
       id: "f590e0f8-fa84-4174-abf8-298f2770e557",
       title: "Leituras Bíblicas Parte 1",
       content: "Leituras Bíblicas Parte 1 content...",
+      urlImage: "https://www.google.com.br/image.png",
       createdAt: new Date(),
       teacher_id: 10,
     };
@@ -91,6 +93,7 @@ describe("PostRepository", () => {
         title: "A guerra dos cem anos",
         content:
           "A Guerra dos Cem Anos é uma obra que conta uma série de conflitos travados entre os reinos da Inglaterra e da França durante o final da Idade Média ...",
+        urlImage: "https://www.google.com.br/image.png",
         createdAt: new Date("2024-07-20"),
         teacher_id: 8,
         name: "Xuxa da Silva",
@@ -101,6 +104,7 @@ describe("PostRepository", () => {
         title: "Os Lusíadas",
         content:
           "Os Lusíadas é uma obra de poesia épica do escritor português Luís Vaz de Camões, a primeira epopeia portuguesa publicada em versão impressa.",
+        urlImage: "https://www.google.com.br/image.png",
         createdAt: new Date("2024-07-20"),
         teacher_id: 8,
         name: "Xuxa da Silva",
@@ -149,6 +153,8 @@ describe("PostRepository", () => {
         title: "A guerra dos cem anos",
         content:
           "A Guerra dos Cem Anos é uma obra que conta uma série de conflitos travados entre os reinos da Inglaterra e da França durante o final da Idade Média ...",
+        urlImage: "https://www.google.com.br/image.png",
+
         createdAt: new Date("2024-07-20"),
         teacher_id: 8,
         name: "Xuxa da Silva",
