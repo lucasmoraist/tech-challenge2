@@ -154,7 +154,7 @@ INSERT INTO
 VALUES (
         'Desenvolvimento de Aplicativos Mobile com Flutter',
         'Flutter é um framework de código aberto criado pelo Google, usado para desenvolver aplicativos para Android, iOS e web a partir de uma única base de código. Neste curso, os alunos aprenderão a criar interfaces de usuário responsivas e modernas utilizando Dart, a linguagem por trás do Flutter. O curso cobrirá desde os conceitos básicos de widgets até a integração com APIs e bancos de dados. Ao final do curso, os alunos estarão preparados para criar seus próprios aplicativos móveis, prontos para serem lançados nas lojas de aplicativos.',
-        'https://storage.cloud.google.com/devlog-projeto-postech/image-01.png',
+        'https://storage.cloud.google.com/devlog-projeto-postech/image-01.jpg',
         NOW(),
         (
             SELECT id
@@ -196,7 +196,7 @@ INSERT INTO
 VALUES (
         'JavaScript Avançado: Promises, Async e Await',
         'JavaScript é a linguagem principal para desenvolvimento web, mas muitos desenvolvedores encontram desafios ao lidar com tarefas assíncronas. Neste curso, vamos explorar o conceito de Promises em JavaScript e como elas podem ajudar a gerenciar código assíncrono. Também abordaremos as palavras-chave `async` e `await`, que tornam o código assíncrono mais fácil de ler e escrever. Além disso, veremos como utilizar APIs modernas e manipular dados de maneira eficiente utilizando JavaScript. Este curso é ideal para desenvolvedores que já têm conhecimento básico da linguagem e querem avançar em suas habilidades.',
-        'https://storage.cloud.google.com/devlog-projeto-postech/image-03.jpg',
+        'https://storage.cloud.google.com/devlog-projeto-postech/image-03.png',
         NOW(),
         (
             SELECT id
@@ -238,7 +238,7 @@ INSERT INTO
 VALUES (
         'Inteligência Artificial com Python: Fundamentos',
         'A inteligência artificial (IA) está revolucionando muitas indústrias, e Python é uma das principais linguagens usadas para o desenvolvimento de algoritmos de IA. Neste curso, vamos cobrir os fundamentos da IA, incluindo machine learning, redes neurais e processamento de linguagem natural. Utilizando bibliotecas como TensorFlow e Keras, os alunos aprenderão a criar e treinar seus próprios modelos de IA. Este curso é ideal para desenvolvedores que desejam se especializar nessa área e aprender como aplicar IA em projetos reais, desde reconhecimento de padrões até automação de tarefas.',
-        'https://storage.cloud.google.com/devlog-projeto-postech/image-01.png',
+        'https://storage.cloud.google.com/devlog-projeto-postech/image-01.jpg',
         NOW(),
         (
             SELECT id
@@ -259,7 +259,7 @@ INSERT INTO
 VALUES (
         'DevOps: Integração e Entrega Contínua',
         'O DevOps é um conjunto de práticas que visa integrar desenvolvimento e operações para automatizar a entrega de software. Neste curso, os alunos aprenderão como implementar pipelines de integração e entrega contínua (CI/CD), utilizando ferramentas como Docker, Kubernetes e Jenkins. O curso cobrirá desde a criação de containers até o deployment automatizado de aplicações em ambientes de produção. Ao final, os alunos serão capazes de configurar e gerenciar seus próprios ambientes DevOps, garantindo entregas rápidas e confiáveis.',
-        'https://storage.cloud.google.com/devlog-projeto-postech/image-02.png',
+        'https://storage.cloud.google.com/devlog-projeto-postech/image-02.jpg',
         NOW(),
         (
             SELECT id
