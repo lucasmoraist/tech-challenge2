@@ -15,21 +15,24 @@ export const getAllPostSchema = {
   response: {
     200: {
       description: "Successful response",
-      type: "array",
-      items: {
-        type: "object",
-        properties: {
-          id: { type: "string", format: "uuid" },
-          title: { type: "string" },
-          content: { type: "string" },
-          createdat: {
-            type: "string",
-            format: "date",
-            example: "2022-07-01",
+      type: "object",
+      properties: {
+        currentPage: { page: "number" },
+        itemsPerPage: { page: "number" },
+        totalNumberOfPages: { page: "number" },
+        posts: {
+          type: "array",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            title: { type: "string" },
+            content: { type: "string" },
+            urlimage: { type: "string" },
+            createdat: {
+              type: "string",
+              format: "date",
+              example: "2022-07-01",
+            },
           },
-          idteacher: { type: "number" },
-          name: { type: "string" },
-          school_subject: { type: "string" },
         },
       },
     },

@@ -5,9 +5,11 @@ import { Post } from "@/entities/post.entity";
 import { PostUpdateType } from "@/types/post-update.type";
 import { PostListType } from "@/types/post-list-type";
 import { PostSearchType } from "@/types/post-search-type";
+import { postSummary } from "@/types/post-summary";
+import { postTeacherSummary } from "@/types/post-teacher-summary-type";
 
 export class PostRepository implements IPostRepository {
-  async getAll(page: number, limit: number): Promise<PostTeacherType[] | []> {
+  async getAll(page: number, limit: number): Promise<postTeacherSummary> {
     const offset = (page - 1) * limit;
 
     const result = await database.clientInstance?.query(
@@ -21,11 +23,27 @@ export class PostRepository implements IPostRepository {
       [limit, offset]
     );
 
-    return result?.rows || [];
+    const totalPages = await database.clientInstance?.query(
+      `
+      SELECT COUNT(*) AS total FROM post
+      `
+    );
+
+    const itens: PostTeacherType[] = result?.rows || [];
+
+    const resultado: postTeacherSummary = {
+      currentPage: page,
+      itemsPerPage: itens.length,
+      totalNumberOfPages: Math.ceil(totalPages?.rows[0].total / limit),
+      posts: itens.length > 0 ? itens : [],
+    };
+
+    return resultado;
   }
 
-  async getList(page: number, limit: number): Promise<PostListType[] | []> {
+  async getList(page: number, limit: number): Promise<postSummary> {
     const offset = (page - 1) * limit;
+
     const result = await database.clientInstance?.query(
       `
       SELECT post.id, post.title, post.content, post.urlimage, post.createdat FROM post
@@ -34,7 +52,22 @@ export class PostRepository implements IPostRepository {
       [limit, offset]
     );
 
-    return result?.rows || [];
+    const totalPages = await database.clientInstance?.query(
+      `
+      SELECT COUNT(*) AS total FROM post
+      `
+    );
+
+    const itens: Post[] = result?.rows || [];
+
+    const resultado: postSummary = {
+      currentPage: page,
+      itemsPerPage: itens.length,
+      totalNumberOfPages: Math.ceil(totalPages?.rows[0].total / limit),
+      posts: itens.length > 0 ? itens : [],
+    };
+
+    return resultado;
   }
 
   async getOne(postId: string): Promise<PostTeacherType | null> {
