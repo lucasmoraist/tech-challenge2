@@ -21,6 +21,7 @@ export class UserRepository implements IUserRepository {
       `,
       [username, password]
     );
+
     return result?.rows[0];
   }
 }

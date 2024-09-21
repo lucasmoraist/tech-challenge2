@@ -16,6 +16,8 @@ export const signinUserSchema = {
         description: "Successful response",
         type: "object",
         properties: {
+          user_id: { type: "string" },
+          teacher_name: { type: "string" },
           token: { type: "string" },
         },
       },

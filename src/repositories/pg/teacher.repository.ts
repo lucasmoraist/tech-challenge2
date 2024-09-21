@@ -13,4 +13,17 @@ export class TeacherRepository implements ITeacherRepository {
 
     return result?.rows[0];
   }
+
+  async getName(id: number): Promise<string> {
+    const result = await database.clientInstance?.query(
+      `
+      SELECT name FROM teacher WHERE teacher.user_id = $1
+      `,
+      [id]
+    );
+
+    const name = result?.rows[0].name;
+
+    return name;
+  }
 }
