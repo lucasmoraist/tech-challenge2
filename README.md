@@ -23,7 +23,6 @@ Grupo 08:
     Thiago Lima Dyonisio RM355323
 
 ## Requisitos
-
     - Implementação em Node.js
     - Utilização de frameworks como express ou fastify
     - Banco SQL ou NOSQL
