@@ -1,9 +1,9 @@
 import { ITeacherRepository } from "@/repositories/teacher.repository.interface";
 
-export class GetNameTeacherUseCase {
+export class GetIdTeacherUseCase {
   constructor(private readonly teacherRepository: ITeacherRepository) {}
 
-  async handler(id: number) {
-    return this.teacherRepository.getName(id);
+  async handler(idUser: number) {
+    return this.teacherRepository.getTeacherByUserId(idUser);
   }
 }
