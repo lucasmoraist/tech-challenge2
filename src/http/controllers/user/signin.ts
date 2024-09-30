@@ -1,5 +1,5 @@
 import { InvalidCredentialError } from "@/use-cases/errors/invalid-credential-error";
-import { makeGetNameTeacherUseCase } from "@/use-cases/factory/make-get-name-teacher";
+import { makeGetIdTeacherUseCase } from "@/use-cases/factory/make-get-name-teacher";
 import { makeSigninUserUseCase } from "@/use-cases/factory/make-signin-user";
 import { compare } from "bcryptjs";
 import { FastifyReply, FastifyRequest } from "fastify";
@@ -28,14 +28,18 @@ export async function signin(request: FastifyRequest, reply: FastifyReply) {
 
   const token = await reply.jwtSign({ username });
 
-  const getNameTeacherUseCase = makeGetNameTeacherUseCase();
-  const teacherName = await getNameTeacherUseCase.handler(
-    user.id ? user.id : 0
-  );
+  const getIdTeacherUseCase = makeGetIdTeacherUseCase();
+  const userId = user.id;
 
-  return reply.status(200).send({
+  if (!userId) {
+    throw new InvalidCredentialError();
+  }
+
+  const teacherId = await getIdTeacherUseCase.handler(userId);
+  
+  return reply.status(200).send(JSON.stringify({
     user_id: user.id,
-    teacher_name: teacherName,
+    teacher_id: teacherId,
     token: token,
-  });
+  }));
 }
