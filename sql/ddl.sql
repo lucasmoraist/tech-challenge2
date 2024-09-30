@@ -2,7 +2,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 create table "user"(
 id SERIAL primary key,
-email VARCHAR(255) not null,
+username VARCHAR(255) not null,
 password varchar(100) not null
 )
 
