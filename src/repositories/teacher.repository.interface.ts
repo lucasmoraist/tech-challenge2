@@ -1,6 +1,8 @@
+import { Post } from "@/entities/post.entity";
 import { Teacher } from "@/entities/teacher.entity";
 
 export interface ITeacherRepository {
   create(teacher: Teacher): Promise<Teacher>;
-  getName(id: number): Promise<string>;
+  getTeacherByUserId(userId: number): Promise<number>;
+  getTeacherById(teacherId: number): Promise<Teacher & { posts: Post[] }>;
 }
