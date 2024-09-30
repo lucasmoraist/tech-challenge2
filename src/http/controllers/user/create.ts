@@ -8,7 +8,7 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     username: z.string(),
     password: z.string(),
   });
-
+  
   const { username, password } = registerBodySchema.parse(request.body);
 
   const hashedPassword = await hash(password, 8);

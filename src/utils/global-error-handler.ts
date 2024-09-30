@@ -1,4 +1,5 @@
 import { env } from "@/env";
+import { DuplicateUsernameError } from "@/use-cases/errors/duplicate-username-error";
 import { InvalidCredentialError } from "@/use-cases/errors/invalid-credential-error";
 import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-fount-error";
 import { FastifyReply, FastifyRequest } from "fastify";
@@ -32,6 +33,10 @@ export function globalErrorHandler(
 
   if (error instanceof InvalidCredentialError) {
     return reply.status(401).send({ message: error.message });
+  }
+
+  if (error instanceof DuplicateUsernameError) {
+    return reply.status(400).send({ message: error.message });
   }
 
   if (env.NODE_ENV === "development") {
