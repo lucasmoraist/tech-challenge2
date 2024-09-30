@@ -18,11 +18,15 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     name,
     school_subject,
     user_id,
+    posts: [],
   });
 
-  reply.status(201).send({
-    id: teacher.id,
-    name: teacher.name,
-    school_subject: teacher.school_subject,
-  });
+  reply.status(201).send(
+    JSON.stringify({
+      id: teacher.id,
+      name: teacher.name,
+      school_subject: teacher.school_subject,
+      posts: [],
+    })
+  );
 }
