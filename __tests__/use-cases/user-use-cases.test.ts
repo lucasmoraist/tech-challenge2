@@ -1,8 +1,8 @@
 import { User } from "@/entities/user.entity";
 import { UserRepositoryMock } from "../mocks/user-repository-mock";
-import { CreateUserUseCase } from "@/use-cases/create-user";
+import { CreateUserUseCase } from "@/use-cases/user/create-user";
 import { hash } from "bcryptjs";
-import { SigninUserUseCase } from "@/use-cases/signin-user";
+import { SigninUserUseCase } from "@/use-cases/user/signin-user";
 
 describe("User Use Cases", () => {
   it("CreateUserUseCase - Should return a new created user", async () => {

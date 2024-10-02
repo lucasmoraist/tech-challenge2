@@ -1,5 +1,5 @@
 import { PostRepository } from "@/repositories/pg/post.repository";
-import { GetAllPostUseCase } from "../get-all-post";
+import { GetAllPostUseCase } from "../post/get-all-post";
 
 export function makeFindAllPostUseCase() {
   const postRepository = new PostRepository();

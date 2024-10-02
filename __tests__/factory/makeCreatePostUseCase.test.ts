@@ -1,5 +1,5 @@
 import { PostRepository } from "@/repositories/pg/post.repository";
-import { CreatePostUseCase } from "@/use-cases/create-post";
+import { CreatePostUseCase } from "@/use-cases/post/create-post";
 import { makeCreatePostUseCase } from "@/use-cases/factory/make-create-post";
 
 jest.mock("@/repositories/pg/post.repository", () => ({
