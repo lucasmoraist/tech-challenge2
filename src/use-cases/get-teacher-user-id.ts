@@ -1,6 +1,6 @@
 import { ITeacherRepository } from "@/repositories/teacher.repository.interface";
 
-export class GetIdTeacherUseCase {
+export class GetTeacherByUserIdUseCase {
   constructor(private readonly teacherRepository: ITeacherRepository) {}
 
   async handler(idUser: number) {
