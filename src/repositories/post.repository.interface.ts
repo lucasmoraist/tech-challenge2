@@ -1,5 +1,4 @@
 import { Post } from "@/entities/post.entity";
-import { PostListType } from "@/types/post-list-type";
 import { PostSearchType } from "@/types/post-search-type";
 import { postSummary } from "@/types/post-summary";
 import { postTeacherSummary } from "@/types/post-teacher-summary-type";
