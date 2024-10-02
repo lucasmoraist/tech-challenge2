@@ -1,4 +1,4 @@
-import { makeCreateTeacherUseCase } from "@/use-cases/factory/make-create-teacher";
+import { makeCreateTeacherUseCase } from "@/use-cases/factory/teacher/make-create-teacher";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 

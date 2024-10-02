@@ -1,5 +1,5 @@
 import { TeacherRepository } from "@/repositories/pg/teacher.repository";
-import { GetTeacherByUserIdUseCase } from "../teacher/get-teacher-user-id";
+import { GetTeacherByUserIdUseCase } from "../../teacher/get-teacher-user-id";
 
 export function makeGetTeacherUserIdUseCase() {
     const teacherRepository = new TeacherRepository();

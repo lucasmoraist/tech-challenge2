@@ -1,5 +1,5 @@
 import { PostRepository } from "@/repositories/pg/post.repository";
-import { UpdatePostUseCase } from "../post/update-post";
+import { UpdatePostUseCase } from "../../post/update-post";
 
 export function makeUpdatePostUseCase() {
   const postRepository = new PostRepository();

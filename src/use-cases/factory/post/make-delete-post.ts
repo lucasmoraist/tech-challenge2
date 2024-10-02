@@ -1,5 +1,5 @@
 import { PostRepository } from "@/repositories/pg/post.repository";
-import { DeletePostUseCase } from "../post/delete-post";
+import { DeletePostUseCase } from "../../post/delete-post";
 
 export function makeDeletePostUseCase() {
   const postRepository = new PostRepository();
