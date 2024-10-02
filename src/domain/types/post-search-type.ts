@@ -1,3 +1,3 @@
 import { Post } from "@/domain/entities/post.entity";
 
-export type PostSearchType = Pick<Post, "title" | "content">;
+export type PostSearchType = Pick<Post, "title">;
