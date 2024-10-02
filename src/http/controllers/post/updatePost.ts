@@ -13,13 +13,14 @@ export async function UpdatePost(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
     title: z.string().optional(),
     content: z.string().optional(),
+    urlImage: z.string().optional(),
   });
 
-  const { title, content } = registerBodySchema.parse(request.body);
+  const { title, content, urlImage } = registerBodySchema.parse(request.body);
 
   const updatePostUseCase = makeUpdatePostUseCase();
 
-  const result = await updatePostUseCase.handler(postId, { title, content });
+  const result = await updatePostUseCase.handler(postId, { title, content, urlImage });
 
   if (!result) throw new ResourceNotFoundError();
 

@@ -1,3 +1,5 @@
+import { url } from "inspector";
+
 export const updatePostSchema = {
   summary: "Update post",
   description: "This method updates one post by id",
@@ -11,6 +13,7 @@ export const updatePostSchema = {
     properties: {
       title: { type: "string" },
       content: { type: "string" },
+      urlImage: { type: "string" },
     },
   },
   response: {
