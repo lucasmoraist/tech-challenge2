@@ -3,7 +3,6 @@ import { IPostRepository } from "@/repositories/post.repository.interface";
 import { PostTeacherType } from "@/domain/types/post-teacher.type";
 import { Post } from "@/domain/entities/post.entity";
 import { PostUpdateType } from "@/domain/types/post-update.type";
-import { PostListType } from "@/domain/types/post-list-type";
 import { PostSearchType } from "@/domain/types/post-search-type";
 import { postSummary } from "@/domain/types/post-summary";
 import { postTeacherSummary } from "@/domain/types/post-teacher-summary-type";
@@ -112,16 +111,16 @@ export class PostRepository implements IPostRepository {
 
   async updatePost(
     postId: string,
-    { title, content }: PostUpdateType
+    { title, content, urlImage }: PostUpdateType
   ): Promise<Post | null> {
     const result = await database.clientInstance?.query(
       `
       UPDATE post
-      SET title = COALESCE($1, title), content = COALESCE($2, content)
-      WHERE post.id = $3
+      SET title = COALESCE($1, title), content = COALESCE($2, content), url_image = COALESCE($3, url_image)
+      WHERE post.id = $4
       RETURNING *
       `,
-      [title, content, postId]
+      [title, content, urlImage, postId]
     );
 
     return result?.rows[0] || null;
