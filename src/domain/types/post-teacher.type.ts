@@ -1,5 +1,5 @@
-import { Post } from "@/entities/post.entity";
-import { Teacher } from "@/entities/teacher.entity";
+import { Post } from "@/domain/entities/post.entity";
+import { Teacher } from "@/domain/entities/teacher.entity";
 
 export type PostTeacherType = Pick<
   Post,

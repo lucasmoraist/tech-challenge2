@@ -1,4 +1,4 @@
-import { Teacher } from "@/entities/teacher.entity";
+import { Teacher } from "@/domain/entities/teacher.entity";
 import { TeacherRepository } from "@/repositories/pg/teacher.repository";
 import { database } from "@/lib/pg/db";
 

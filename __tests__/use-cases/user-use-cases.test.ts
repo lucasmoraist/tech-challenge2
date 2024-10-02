@@ -1,4 +1,4 @@
-import { User } from "@/entities/user.entity";
+import { User } from "@/domain/entities/user.entity";
 import { UserRepositoryMock } from "../mocks/user-repository-mock";
 import { CreateUserUseCase } from "@/use-cases/user/create-user";
 import { hash } from "bcryptjs";

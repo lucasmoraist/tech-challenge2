@@ -1,9 +1,9 @@
-import { Post } from "@/entities/post.entity";
+import { Post } from "@/domain/entities/post.entity";
 import { IPostRepository } from "@/repositories/post.repository.interface";
-import { PostListType } from "@/types/post-list-type";
-import { PostSearchType } from "@/types/post-search-type";
-import { PostTeacherType } from "@/types/post-teacher.type";
-import { PostUpdateType } from "@/types/post-update.type";
+import { PostListType } from "@/domain/types/post-list-type";
+import { PostSearchType } from "@/domain/types/post-search-type";
+import { PostTeacherType } from "@/domain/types/post-teacher.type";
+import { PostUpdateType } from "@/domain/types/post-update.type";
 
 const posts: PostTeacherType[] = [
   {

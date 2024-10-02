@@ -1,4 +1,4 @@
-import { Post } from "@/entities/post.entity";
+import { Post } from "@/domain/entities/post.entity";
 
 type PartialPost = Partial<Post>;
 

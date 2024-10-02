@@ -1,9 +1,9 @@
-import { Post } from "@/entities/post.entity";
-import { PostSearchType } from "@/types/post-search-type";
-import { postSummary } from "@/types/post-summary";
-import { postTeacherSummary } from "@/types/post-teacher-summary-type";
-import { PostTeacherType } from "@/types/post-teacher.type";
-import { PostUpdateType } from "@/types/post-update.type";
+import { Post } from "@/domain/entities/post.entity";
+import { PostSearchType } from "@/domain/types/post-search-type";
+import { postSummary } from "@/domain/types/post-summary";
+import { postTeacherSummary } from "@/domain/types/post-teacher-summary-type";
+import { PostTeacherType } from "@/domain/types/post-teacher.type";
+import { PostUpdateType } from "@/domain/types/post-update.type";
 
 export interface IPostRepository {
   getAll(page: number, limit: number): Promise<postTeacherSummary>;

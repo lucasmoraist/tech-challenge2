@@ -1,4 +1,4 @@
-import { Post } from "@/entities/post.entity";
+import { Post } from "@/domain/entities/post.entity";
 import { IPostRepository } from "@/repositories/post.repository.interface";
 
 export class DeletePostUseCase {

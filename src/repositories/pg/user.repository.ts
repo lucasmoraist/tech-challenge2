@@ -1,4 +1,4 @@
-import { User } from "@/entities/user.entity";
+import { User } from "@/domain/entities/user.entity";
 import { IUserRepository } from "@/repositories/user.repository.interface";
 import { database } from "@/lib/pg/db";
 import { DuplicateUsernameError } from "@/use-cases/errors/duplicate-username-error";

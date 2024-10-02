@@ -1,10 +1,10 @@
-import { Teacher } from "@/entities/teacher.entity";
+import { Teacher } from "@/domain/entities/teacher.entity";
 import { ITeacherRepository } from "@/repositories/teacher.repository.interface";
 import { database } from "@/lib/pg/db";
-import { Post } from "@/entities/post.entity";
-import { TeacherType } from "@/types/teacher.type";
-import { teacherSummary } from "@/types/teacher-summary.type";
-import { TeacherUpdateType } from "@/types/teacher-update.type";
+import { Post } from "@/domain/entities/post.entity";
+import { TeacherType } from "@/domain/types/teacher.type";
+import { teacherSummary } from "@/domain/types/teacher-summary.type";
+import { TeacherUpdateType } from "@/domain/types/teacher-update.type";
 
 export class TeacherRepository implements ITeacherRepository {
   async listAll(page: number, limit: number): Promise<teacherSummary> {

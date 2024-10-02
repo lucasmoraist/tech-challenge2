@@ -1,6 +1,6 @@
 import { IPostRepository } from "@/repositories/post.repository.interface";
-import { PostListType } from "@/types/post-list-type";
-import { postSummary } from "@/types/post-summary";
+import { PostListType } from "@/domain/types/post-list-type";
+import { postSummary } from "@/domain/types/post-summary";
 
 export class GetListPostUseCase {
   constructor(private readonly postRepository: IPostRepository) {}

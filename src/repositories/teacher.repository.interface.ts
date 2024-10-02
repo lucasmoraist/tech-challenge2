@@ -1,7 +1,7 @@
-import { Post } from "@/entities/post.entity";
-import { Teacher } from "@/entities/teacher.entity";
-import { teacherSummary } from "@/types/teacher-summary.type";
-import { TeacherUpdateType } from "@/types/teacher-update.type";
+import { Post } from "@/domain/entities/post.entity";
+import { Teacher } from "@/domain/entities/teacher.entity";
+import { teacherSummary } from "@/domain/types/teacher-summary.type";
+import { TeacherUpdateType } from "@/domain/types/teacher-update.type";
 
 export interface ITeacherRepository {
   listAll(page: number, limit: number): Promise<teacherSummary>;

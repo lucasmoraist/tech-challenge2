@@ -1,6 +1,6 @@
 import { IPostRepository } from "@/repositories/post.repository.interface";
 import { ResourceNotFoundError } from "../errors/resource-not-fount-error";
-import { PostTeacherType } from "@/types/post-teacher.type";
+import { PostTeacherType } from "@/domain/types/post-teacher.type";
 
 export class GetOnePostUseCase {
   constructor(private readonly postRepository: IPostRepository) {}

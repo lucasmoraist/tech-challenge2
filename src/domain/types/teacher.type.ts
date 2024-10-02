@@ -1,4 +1,4 @@
-import { Teacher } from "@/entities/teacher.entity";
+import { Teacher } from "@/domain/entities/teacher.entity";
 
 export type TeacherType = Pick<
     Teacher,

@@ -1,4 +1,4 @@
-import { Teacher } from "@/entities/teacher.entity";
+import { Teacher } from "@/domain/entities/teacher.entity";
 import { CreateTeacherUseCase } from "@/use-cases/teacher/create-teacher";
 import { TeacherRepositoryMock } from "../mocks/teacher-repository-mock";
 
