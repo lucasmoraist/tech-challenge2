@@ -1,8 +1,9 @@
 import { TeacherRepository } from "@/repositories/pg/teacher.repository";
-import { GetIdTeacherUseCase } from "../get-teacher-user-id";
+import { GetOneTeacher } from "../get-one-teacher";
 
-export function makeGetOneTeacherUseCase() {
-    const teacherRepository = new TeacherRepository();
-    const getIdTeacherUseCase = new GetIdTeacherUseCase(teacherRepository);
-    return getIdTeacherUseCase;
+export function makeGetTeacherUseCase() {
+  const teacherRepository = new TeacherRepository();
+  const getIdTeacherUseCase = new GetOneTeacher(teacherRepository);
+
+  return getIdTeacherUseCase;
 }
