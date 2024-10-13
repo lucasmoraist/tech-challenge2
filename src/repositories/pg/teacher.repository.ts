@@ -1,6 +1,7 @@
 import { Teacher } from "@/entities/teacher.entity";
 import { ITeacherRepository } from "@/repositories/teacher.repository.interface";
 import { database } from "@/lib/pg/db";
+import { ITeacher } from "@/types/teacher-type";
 
 export class TeacherRepository implements ITeacherRepository {
   async create({ name, school_subject, user_id }: Teacher): Promise<Teacher> {
@@ -25,5 +26,40 @@ export class TeacherRepository implements ITeacherRepository {
     const name = result?.rows[0].name;
 
     return name;
+  }
+
+  async getOne(teacherId: number): Promise<ITeacher | null> {
+    const result = await database.clientInstance?.query(
+      `
+      SELECT 
+        t.id, 
+        t.name, 
+        t.school_subject,
+        COALESCE(
+          json_agg(
+            json_build_object(
+              'title', p.title, 
+              'createdAt', p.createdAt
+            )
+          ) FILTER (WHERE p.id IS NOT NULL), '[]'
+        ) AS posts
+      FROM teacher t
+      LEFT JOIN post p ON p.teacher_id = t.id
+      WHERE t.id = $1
+      GROUP BY t.id
+    `,
+      [teacherId]
+    );
+
+    if (!result?.rows[0]) {
+      return null;
+    }
+
+    return {
+      id: result.rows[0].id,
+      name: result.rows[0].name,
+      school_subject: result.rows[0].school_subject,
+      posts: result.rows[0].posts || [],
+    };
   }
 }
