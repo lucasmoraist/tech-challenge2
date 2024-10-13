@@ -16,11 +16,11 @@ import { Search } from "./searchPost";
 import { searchPostSchema } from "@/lib/helper/swagger/post/search-post-schema";
 
 export async function postRoutes(app: FastifyInstance) {
-  app.get(
-    "/admin/posts",
-    { schema: getAllPostSchema, onRequest: [jwtValidate] },
-    getAll
-  );
+  // app.get(
+  //   "/admin/posts",
+  //   { schema: getAllPostSchema, onRequest: [jwtValidate] },
+  //   getAll
+  // );
 
   app.get("/posts", getListPostSchema, getList);
 
