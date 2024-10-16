@@ -1,6 +1,6 @@
 import { InvalidCredentialError } from "@/use-cases/errors/invalid-credential-error";
 import { makeGetNameTeacherUseCase } from "@/use-cases/teacher/factory/make-get-name-teacher";
-import { makeSigninUserUseCase } from "@/use-cases/user/make-signin-user";
+import { makeSigninUserUseCase } from "@/use-cases/user/factory/make-signin-user";
 import { compare } from "bcryptjs";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";

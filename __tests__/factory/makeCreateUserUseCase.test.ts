@@ -1,6 +1,6 @@
 import { UserRepository } from "@/repositories/pg/user.repository";
 import { CreateUserUseCase } from "@/use-cases/user/create-user";
-import { makeCreateUserUseCase } from "@/use-cases/user/make-create-user";
+import { makeCreateUserUseCase } from "@/use-cases/user/factory/make-create-user";
 
 jest.mock("@/repositories/pg/post.repository", () => ({
   UserRepository: jest.fn(),
