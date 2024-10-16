@@ -12,5 +12,5 @@ export async function teacherRoutes(app: FastifyInstance) {
   app.get("/teacher", getAll);
   app.get("/admin/teacher/:teacherId", { onRequest: [jwtValidate] }, getOne);
   app.put("/admin/teacher/:teacherId", { onRequest: [jwtValidate] }, updateTeacher);
-  app.delete("/admin/teacher/:teacherId", deleteTeacher);
+  app.delete("/admin/teacher/:teacherId", { onRequest: [jwtValidate] }, deleteTeacher);
 }
