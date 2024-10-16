@@ -9,7 +9,7 @@ export const swaggerConfig: SwaggerOptions = {
       version: "0.1.0",
       contact: {
         name: "Grupo 8",
-        url: "grupo8.tech"
+        url: "https://grupo8.tech/"
       }
     },
     servers: [
