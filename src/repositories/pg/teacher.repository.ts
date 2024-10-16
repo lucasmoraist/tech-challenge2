@@ -2,6 +2,7 @@ import { Teacher } from "@/entities/teacher.entity";
 import { ITeacherRepository } from "@/repositories/teacher.repository.interface";
 import { database } from "@/lib/pg/db";
 import { ITeacher } from "@/types/teacher-type";
+import { TeacherUpdateType } from "@/types/teacher-update.type";
 
 export class TeacherRepository implements ITeacherRepository {
   async create({ name, school_subject, user_id }: Teacher): Promise<Teacher> {
@@ -61,5 +62,19 @@ export class TeacherRepository implements ITeacherRepository {
       school_subject: result.rows[0].school_subject,
       posts: result.rows[0].posts || [],
     };
+  }
+
+  async updateTeacher(
+    teacherId: number,
+    { name, school_subject }: TeacherUpdateType
+  ): Promise<Teacher | null> {
+    const result = await database.clientInstance?.query(`
+      UPDATE teacher
+      SET name = COALESCE($1, name), school_subject = COALESCE($2, school_subject)
+      WHERE teacher.id = $3
+      RETURNING *
+    `, [name, school_subject, teacherId]);
+
+    return result?.rows[0] || null;
   }
 }
