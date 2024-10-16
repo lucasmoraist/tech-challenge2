@@ -3,6 +3,7 @@ import { ITeacherRepository } from "@/repositories/teacher.repository.interface"
 import { database } from "@/lib/pg/db";
 import { ITeacher } from "@/types/teacher-type";
 import { TeacherUpdateType } from "@/types/teacher-update.type";
+import { TeacherListType } from "@/types/teacher-list.type";
 
 export class TeacherRepository implements ITeacherRepository {
   async create({ name, school_subject, user_id }: Teacher): Promise<Teacher> {
@@ -76,5 +77,15 @@ export class TeacherRepository implements ITeacherRepository {
     `, [name, school_subject, teacherId]);
 
     return result?.rows[0] || null;
+  }
+
+  async getAll(): Promise<TeacherListType[]> {
+    const result = await database.clientInstance?.query(
+      `
+      SELECT id, name, school_subject FROM teacher
+      `
+    );
+
+    return result?.rows || [];
   }
 }
