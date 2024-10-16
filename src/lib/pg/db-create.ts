@@ -52,6 +52,19 @@ class DbCreate {
         COMMIT;
 
         `);
+    
+    await database.clientInstance?.query(`
+      BEGIN;
+
+        CREATE TABLE IF NOT EXISTS student(
+        id SERIAL primary key,
+        name VARCHAR(255) NOT NULL,
+        user_id INT UNIQUE,
+        foreign key (user_id) references "user"(id) ON DELETE CASCADE
+        );
+
+      COMMIT;  
+    `);
   }
 }
 
