@@ -1,5 +1,5 @@
 import { IPostRepository } from "@/repositories/post.repository.interface";
-import { PostSearchType } from "@/types/post-search-type";
+import { PostSearchType } from "@/types/post/post-search-type";
 
 export class SearchPostUseCase {
   constructor(private readonly postRepository: IPostRepository) {}

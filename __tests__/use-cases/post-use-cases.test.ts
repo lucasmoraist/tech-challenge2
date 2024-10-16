@@ -5,7 +5,7 @@ import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-fount-err
 import { CreatePostUseCase } from "@/use-cases/create-post";
 import { Post } from "@/entities/post.entity";
 import { UpdatePostUseCase } from "@/use-cases/update-post";
-import { PostUpdateType } from "@/types/post-update.type";
+import { PostUpdateType } from "@/types/post/post-update.type";
 import { DeletePostUseCase } from "@/use-cases/delete-post";
 import { GetListPostUseCase } from "@/use-cases/get-list-post";
 import { SearchPostUseCase } from "@/use-cases/search-post";

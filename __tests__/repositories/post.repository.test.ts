@@ -1,10 +1,10 @@
 import { Post } from "@/entities/post.entity";
 import { PostRepository } from "@/repositories/pg/post.repository";
 import { database } from "@/lib/pg/db";
-import { PostUpdateType } from "@/types/post-update.type";
-import { PostTeacherType } from "@/types/post-teacher.type";
-import { PostListType } from "@/types/post-list-type";
-import { PostSearchType } from "@/types/post-search-type";
+import { PostUpdateType } from "@/types/post/post-update.type";
+import { PostTeacherType } from "@/types/post/post-teacher.type";
+import { PostListType } from "@/types/post/post-list-type";
+import { PostSearchType } from "@/types/post/post-search-type";
 
 jest.mock("../../src/lib/pg/db", () => ({
   database: {
