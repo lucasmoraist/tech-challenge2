@@ -9,6 +9,7 @@ import { env } from "./env";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
 import { swaggerConfig } from "./lib/helper/swagger/swagger-config";
+import { studentRoute } from "./http/controllers/student/routes";
 
 export const app = fastify({ logger: false });
 
@@ -34,3 +35,4 @@ app.setErrorHandler(globalErrorHandler);
 app.register(teacherRoutes);
 app.register(userRoutes);
 app.register(postRoutes);
+app.register(studentRoute);
