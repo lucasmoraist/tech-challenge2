@@ -3,7 +3,8 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 create table "user"(
 id SERIAL primary key,
 username varchar(20) not null,
-password varchar(100) not null
+password varchar(100) not null,
+role varchar(10)
 )
 
 create table teacher(

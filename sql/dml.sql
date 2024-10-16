@@ -1,11 +1,11 @@
-INSERT INTO "user" (username, password) VALUES ('prof_biologia', 'senha123');
-INSERT INTO "user" (username, password) VALUES ('prof_fisica', 'senha123');
-INSERT INTO "user" (username, password) VALUES ('prof_geografia', 'senha123');
-INSERT INTO "user" (username, password) VALUES ('prof_historia', 'senha123');
-INSERT INTO "user" (username, password) VALUES ('prof_ingles', 'senha123');
-INSERT INTO "user" (username, password) VALUES ('prof_matematica', 'senha123');
-INSERT INTO "user" (username, password) VALUES ('prof_portugues', 'senha123');
-INSERT INTO "user" (username, password) VALUES ('prof_quimica', 'senha123');
+INSERT INTO "user" (username, password) VALUES ('prof_biologia', 'senha123', 'teacher');
+INSERT INTO "user" (username, password) VALUES ('prof_fisica', 'senha123', 'teacher');
+INSERT INTO "user" (username, password) VALUES ('prof_geografia', 'senha123', 'teacher');
+INSERT INTO "user" (username, password) VALUES ('prof_historia', 'senha123', 'teacher');
+INSERT INTO "user" (username, password) VALUES ('prof_ingles', 'senha123', 'teacher');
+INSERT INTO "user" (username, password) VALUES ('prof_matematica', 'senha123', 'teacher');
+INSERT INTO "user" (username, password) VALUES ('prof_portugues', 'senha123', 'teacher');
+INSERT INTO "user" (username, password) VALUES ('prof_quimica', 'senha123', 'teacher');
 
 INSERT INTO teacher (name, school_subject, user_id) VALUES ('Ana Silva', 'biologia', 1);
 INSERT INTO teacher (name, school_subject, user_id) VALUES ('Carlos Souza', 'fisica', 2);
