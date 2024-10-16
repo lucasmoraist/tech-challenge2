@@ -1,14 +1,14 @@
-import { GetOnePostUseCase } from "@/use-cases/get-one-post";
-import { GetAllPostUseCase } from "@/use-cases/get-all-post";
+import { GetOnePostUseCase } from "@/use-cases/post/get-one-post";
+import { GetAllPostUseCase } from "@/use-cases/post/get-all-post";
 import { PostRepositoryMock } from "../mocks/post-repository-mock";
 import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-fount-error";
-import { CreatePostUseCase } from "@/use-cases/create-post";
+import { CreatePostUseCase } from "@/use-cases/post/create-post";
 import { Post } from "@/entities/post.entity";
-import { UpdatePostUseCase } from "@/use-cases/update-post";
+import { UpdatePostUseCase } from "@/use-cases/post/update-post";
 import { PostUpdateType } from "@/types/post/post-update.type";
-import { DeletePostUseCase } from "@/use-cases/delete-post";
-import { GetListPostUseCase } from "@/use-cases/get-list-post";
-import { SearchPostUseCase } from "@/use-cases/search-post";
+import { DeletePostUseCase } from "@/use-cases/post/delete-post";
+import { GetListPostUseCase } from "@/use-cases/post/get-list-post";
+import { SearchPostUseCase } from "@/use-cases/post/search-post";
 
 describe("Post Use Cases", () => {
   it("GetAllPostUseCase - Should return a valid list of posts", async () => {

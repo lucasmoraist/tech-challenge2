@@ -1,4 +1,4 @@
-import { makeDeleteTeacherUseCase } from "@/use-cases/factory/make-delete-teacher";
+import { makeDeleteTeacherUseCase } from "@/use-cases/teacher/factory/make-delete-teacher";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 

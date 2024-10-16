@@ -1,4 +1,4 @@
-import { makeCreateUserUseCase } from "@/use-cases/factory/make-create-user";
+import { makeCreateUserUseCase } from "@/use-cases/user/make-create-user";
 import { hash } from "bcryptjs";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";

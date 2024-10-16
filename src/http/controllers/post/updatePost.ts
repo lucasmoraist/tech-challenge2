@@ -1,5 +1,5 @@
 import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-fount-error";
-import { makeUpdatePostUseCase } from "@/use-cases/factory/make-update-post";
+import { makeUpdatePostUseCase } from "@/use-cases/post/factory/make-update-post";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 

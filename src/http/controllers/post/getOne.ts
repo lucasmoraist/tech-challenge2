@@ -1,4 +1,4 @@
-import { makeGetOnePostUseCase } from "@/use-cases/factory/make-get-one-post";
+import { makeGetOnePostUseCase } from "@/use-cases/post/factory/make-get-one-post";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 

@@ -1,5 +1,5 @@
 import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-fount-error";
-import { makeUpdateTeacherUseCase } from "@/use-cases/factory/make-update-teacher";
+import { makeUpdateTeacherUseCase } from "@/use-cases/teacher/factory/make-update-teacher";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 

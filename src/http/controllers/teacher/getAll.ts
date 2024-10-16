@@ -1,4 +1,4 @@
-import { makeFindAllTeacherUseCase } from "@/use-cases/factory/make-find-all-teacher";
+import { makeFindAllTeacherUseCase } from "@/use-cases/teacher/factory/make-find-all-teacher";
 import { FastifyReply, FastifyRequest } from "fastify";
 
 export async function getAll(req: FastifyRequest, res: FastifyReply) {
