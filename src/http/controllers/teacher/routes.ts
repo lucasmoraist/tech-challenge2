@@ -5,10 +5,12 @@ import { getOne } from "./getOne";
 import { jwtValidate } from "@/http/middlewares/jwt-validate";
 import { updateTeacher } from "./updateTeacher";
 import { getAll } from "./getAll";
+import { deleteTeacher } from "./deleteTeacher";
 
 export async function teacherRoutes(app: FastifyInstance) {
   app.post("/teacher", createTeacherSchema, create);
   app.get("/teacher", getAll);
   app.get("/admin/teacher/:teacherId", { onRequest: [jwtValidate] }, getOne);
   app.put("/admin/teacher/:teacherId", { onRequest: [jwtValidate] }, updateTeacher);
+  app.delete("/admin/teacher/:teacherId", deleteTeacher);
 }

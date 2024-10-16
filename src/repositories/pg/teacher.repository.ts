@@ -88,4 +88,15 @@ export class TeacherRepository implements ITeacherRepository {
 
     return result?.rows || [];
   }
+  async deleteTeacher(teacherId: number): Promise<Teacher | null> {
+    const result = await database.clientInstance?.query(
+      `
+      DELETE FROM teacher WHERE id = $1
+      RETURNING *
+      `,
+      [teacherId]
+    );
+
+    return result?.rows[0] || null;
+  }
 }

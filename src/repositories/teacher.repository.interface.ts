@@ -9,4 +9,5 @@ export interface ITeacherRepository {
   getOne(teacherId: number): Promise<ITeacher | null>;
   updateTeacher(teacherId: number, teacher: TeacherUpdateType): Promise<Teacher | null>;
   getAll(): Promise<TeacherListType[]>;
+  deleteTeacher(teacherId: number): Promise<Teacher | null>;
 }
