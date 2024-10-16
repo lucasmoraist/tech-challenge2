@@ -24,4 +24,18 @@ export class UserRepository implements IUserRepository {
 
     return result?.rows[0];
   }
+
+  async updateRole(userId: number, role: string): Promise<User> {
+    const result = await database.clientInstance?.query(
+      `
+      UPDATE "user" 
+      SET role = $1 
+      WHERE id = $2 
+      RETURNING *
+      `,
+      [role, userId]
+    );
+
+    return result?.rows[0];
+  }
 }
