@@ -30,7 +30,7 @@ class DbCreate {
         name VARCHAR(255) NOT NULL,
         school_subject VARCHAR(255) NOT NULL,
         user_id INT UNIQUE,
-        foreign key (user_id) references "user"(id)
+        foreign key (user_id) references "user"(id) ON DELETE CASCADE
         );
 
       COMMIT;
