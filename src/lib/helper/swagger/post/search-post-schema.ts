@@ -3,7 +3,7 @@ export const searchPostSchema = {
     summary: "Get list of posts by term",
     description:
       "This method returns a list of registered posts in the blog by term",
-    tags: ["v1"],
+    tags: ["post"],
     querystring: {
       term: {
         type: "string",

@@ -21,6 +21,7 @@ describe("TeacherRepository", () => {
     const user: User = {
       username: "xuxadasilva",
       password: "123",
+      role: "teacher",
     };
 
     user.id = 10;
@@ -41,6 +42,7 @@ describe("TeacherRepository", () => {
       id: 10,
       username: "xuxadasilva",
       password: "123",
+      role: "teacher",
     };
 
     (database.clientInstance?.query as jest.Mock).mockResolvedValue({

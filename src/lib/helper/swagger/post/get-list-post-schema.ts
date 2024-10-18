@@ -4,7 +4,7 @@ export const getListPostSchema = {
   schema: {
     summary: "Get list of post",
     description: "This method returns a list of posts",
-    tags: ["v1"],
+    tags: ["post"],
     querystring: {
       page: {
         type: "number",

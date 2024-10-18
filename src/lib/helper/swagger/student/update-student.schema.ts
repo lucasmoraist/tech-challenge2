@@ -1,16 +1,15 @@
-export const updateTeacherSchema = {
-    summary: "Update teacher",
-    description: "This method updates one teacher by id",
-    tags: ["teacher"],
+export const updateStudentSchema = {
+    summary: "Update student",
+    description: "This method updates one student by id",
+    tags: ["student"],
     security: [{ bearerAuth: [] }],
     params: {
-      teacherId: { type: "number", description: "id of teacher" },
+      studentId: { type: "number", description: "id of student" },
     },
     body: {
       type: "object",
       properties: {
         name: { type: "string" },
-        school_subject: { type: "string" },
       },
     },
     response: {

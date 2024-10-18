@@ -12,6 +12,7 @@ describe("User Use Cases", () => {
     const user: User = {
       username: "xuxadasilva",
       password: "123",
+      role: "teacher",
     };
 
     const hashedPassword = await hash(user.password, 8);

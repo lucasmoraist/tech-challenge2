@@ -1,14 +1,13 @@
-export const createTeacherSchema = {
+export const createStudentSchema = {
   schema: {
-    summary: "Teacher creation",
-    description: "This method uncludes a new teacher",
-    tags: ["teacher"],
+    summary: "Student creation",
+    description: "This method uncludes a new student",
+    tags: ["student"],
     body: {
       type: "object",
-      required: ["name", "school_subject"],
+      required: ["name"],
       properties: {
         name: { type: "string" },
-        school_subject: { type: "string" },
         user_id: { type: "number" },
       },
     },
@@ -19,7 +18,7 @@ export const createTeacherSchema = {
         properties: {
           id: { type: "number" },
           name: { type: "string" },
-          school_subject: { type: "string" },
+          user_id: { type: "number" },
         },
       },
     },
