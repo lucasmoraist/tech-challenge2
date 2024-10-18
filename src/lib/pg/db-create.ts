@@ -67,11 +67,7 @@ class DbCreate {
     `);
 
     await database.clientInstance?.query(`
-      BEGIN;
-
-        ALTER TABLE "user" ADD COLUMN role VARCHAR(10);
-      
-      COMMIT;
+      ALTER TABLE "user" ADD COLUMN role VARCHAR(10);
     `);
   }
 }
