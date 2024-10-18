@@ -118,7 +118,7 @@ describe("PostRepository", () => {
 
     const result = await postRepository.getAll(1, 10);
 
-    expect(result).toBeInstanceOf(Array);
+    expect(result).toBeInstanceOf(Object);
     expect(result).toBeTruthy();
   });
 
@@ -142,7 +142,7 @@ describe("PostRepository", () => {
 
     const result = await postRepository.getList(1, 10);
 
-    expect(result).toBeInstanceOf(Array);
+    expect(result).toBeInstanceOf(Object);
     expect(result).toBeTruthy();
   });
 

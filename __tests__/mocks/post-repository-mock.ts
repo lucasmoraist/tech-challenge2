@@ -1,7 +1,8 @@
 import { Post } from "@/entities/post.entity";
 import { IPostRepository } from "@/repositories/post.repository.interface";
-import { PostListType } from "@/types/post/post-list-type";
 import { PostSearchType } from "@/types/post/post-search-type";
+import { postSummary } from "@/types/post/post-summary";
+import { postTeacherSummary } from "@/types/post/post-teacher-summary-type";
 import { PostTeacherType } from "@/types/post/post-teacher.type";
 import { PostUpdateType } from "@/types/post/post-update.type";
 
@@ -30,6 +31,13 @@ const posts: PostTeacherType[] = [
   },
 ];
 
+const pagesPosts: postTeacherSummary = {
+  currentPage: 1,
+  itemsPerPage: 10,
+  totalNumberOfPages: 1,
+  posts: posts,
+}
+
 let post: Post = {
   id: "",
   title: "",
@@ -42,20 +50,11 @@ let post: Post = {
 let _posts: Post[] = [];
 
 export class PostRepositoryMock implements IPostRepository {
-  getAll(page: number, limit: number): Promise<PostTeacherType[] | []> {
-    return Promise.resolve(posts);
+  getAll(page: number, limit: number): Promise<postTeacherSummary> {
+    return Promise.resolve(pagesPosts);
   }
-
-  getList(page: number, limit: number): Promise<PostListType[] | []> {
-    const result: PostListType[] = posts.map((i) => {
-      return {
-        id: i.id,
-        title: i.title,
-        createdAt: i.createdAt,
-      };
-    });
-
-    return Promise.resolve(result);
+  getList(page: number, limit: number): Promise<postSummary> {
+    return Promise.resolve(pagesPosts);
   }
 
   getOne(postId: string): Promise<PostTeacherType | null> {
