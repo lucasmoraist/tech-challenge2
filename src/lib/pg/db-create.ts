@@ -67,7 +67,17 @@ class DbCreate {
     `);
 
     await database.clientInstance?.query(`
-      ALTER TABLE "user" ADD COLUMN role VARCHAR(10);
+      DO $$
+        BEGIN
+          IF NOT EXISTS (
+            SELECT 1 
+            FROM information_schema.columns 
+            WHERE table_name='user' 
+            AND column_name='role'
+          ) THEN
+          ALTER TABLE "user" ADD COLUMN role VARCHAR(10);
+        END IF;
+      END $$;
     `);
   }
 }
