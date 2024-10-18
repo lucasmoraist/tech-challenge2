@@ -2,7 +2,7 @@ export const getListTeacherSchema = {
   schema: {
     summary: "Get list of teacher",
     description: "This method returns a list of teachers",
-    tags: ["v1"],
+    tags: ["teacher"],
     response: {
       200: {
         description: "Successful response",

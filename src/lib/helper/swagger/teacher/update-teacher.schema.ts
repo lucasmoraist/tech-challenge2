@@ -1,7 +1,7 @@
 export const updateTeacherSchema = {
     summary: "Update teacher",
     description: "This method updates one teacher by id",
-    tags: ["v2"],
+    tags: ["teacher"],
     security: [{ bearerAuth: [] }],
     params: {
       teacherId: { type: "number", description: "id of teacher" },

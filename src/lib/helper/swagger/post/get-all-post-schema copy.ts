@@ -1,7 +1,7 @@
 export const getAllPostSchema = {
   summary: "Get all post",
   description: "This method returns the posts and their contents",
-  tags: ["v2"],
+  tags: ["post"],
   security: [{ bearerAuth: [] }],
   querystring: {
     page: {

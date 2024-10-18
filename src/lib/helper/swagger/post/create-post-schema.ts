@@ -1,7 +1,7 @@
 export const createPostSchema = {
   summary: "Post creation",
   description: "This method includes a new post in the blog",
-  tags: ["v2"],
+  tags: ["post"],
   security: [{ bearerAuth: [] }],
   body: {
     type: "object",

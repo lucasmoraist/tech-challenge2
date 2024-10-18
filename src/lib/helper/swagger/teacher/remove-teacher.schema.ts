@@ -1,7 +1,7 @@
 export const removeTeacherSchema = {
     summary: "Remove teacher",
     description: "This method removes one teacher by id",
-    tags: ["v2"],
+    tags: ["teacher"],
     security: [{ bearerAuth: [] }],
     params: {
       teacherId: { type: "number", description: "id of teacher" },
