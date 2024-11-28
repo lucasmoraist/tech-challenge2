@@ -17,22 +17,7 @@ export class TeacherRepository implements ITeacherRepository {
     return result?.rows[0];
   }
 
-  async getName(id: number): Promise<string> {
-    const result = await database.clientInstance?.query(
-      `
-      SELECT teacher.name
-      FROM teacher
-      WHERE teacher.user_id = $1
-      `,
-      [id]
-    );
-    
-    const name = result?.rows[0].name;
-    
-    return name;
-  }
-
-  async getOne(teacherId: number): Promise<ITeacher | null> {
+  async getOne(user_id: number): Promise<ITeacher | null> {
     const result = await database.clientInstance?.query(
       `
       SELECT 
@@ -49,10 +34,10 @@ export class TeacherRepository implements ITeacherRepository {
         ) AS posts
       FROM teacher t
       LEFT JOIN post p ON p.teacher_id = t.id
-      WHERE t.id = $1
+      WHERE t.user_id = $1
       GROUP BY t.id
     `,
-      [teacherId]
+      [user_id]
     );
 
     if (!result?.rows[0]) {

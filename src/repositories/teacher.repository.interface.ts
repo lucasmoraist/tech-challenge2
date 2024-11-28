@@ -5,8 +5,7 @@ import { TeacherUpdateType } from "@/types/teacher/teacher-update.type";
 
 export interface ITeacherRepository {
   create(teacher: Teacher): Promise<Teacher>;
-  getName(id?: number): Promise<string>;
-  getOne(teacherId: number): Promise<ITeacher | null>;
+  getOne(user_id: number): Promise<ITeacher | null>;
   updateTeacher(teacherId: number, teacher: TeacherUpdateType): Promise<Teacher | null>;
   getAll(): Promise<TeacherListType[]>;
   deleteTeacher(teacherId: number): Promise<Teacher | null>;

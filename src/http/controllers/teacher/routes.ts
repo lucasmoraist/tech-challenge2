@@ -15,7 +15,7 @@ export async function teacherRoutes(app: FastifyInstance) {
   app.post("/teacher", createTeacherSchema, create);
   app.get("/teacher", getListTeacherSchema, getAll);
   app.get(
-    "/admin/teacher/:teacherId",
+    "/admin/teacher/:userId",
     { onRequest: [jwtValidate], schema: getOneTeacherSchema },
     getOne
   );
