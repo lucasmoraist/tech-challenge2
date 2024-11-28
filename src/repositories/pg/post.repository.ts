@@ -3,7 +3,6 @@ import { IPostRepository } from "@/repositories/post.repository.interface";
 import { PostTeacherType } from "@/types/post/post-teacher.type";
 import { Post } from "@/entities/post.entity";
 import { PostUpdateType } from "@/types/post/post-update.type";
-import { PostListType } from "@/types/post/post-list-type";
 import { PostSearchType } from "@/types/post/post-search-type";
 import { postSummary } from "@/types/post/post-summary";
 import { postTeacherSummary } from "@/types/post/post-teacher-summary-type";
@@ -14,7 +13,7 @@ export class PostRepository implements IPostRepository {
 
     const result = await database.clientInstance?.query(
       `
-      SELECT post.id, post.title, post.content, post.createdAt, teacher.id as idTeacher, teacher.name, teacher.school_subject
+      SELECT post.id, post.title, post.content, post.urlImage, post.createdAt, teacher.id as idTeacher, teacher.name, teacher.school_subject
       FROM post
       INNER JOIN teacher
       ON post.teacher_id = teacher.id
@@ -46,7 +45,7 @@ export class PostRepository implements IPostRepository {
 
     const result = await database.clientInstance?.query(
       `
-      SELECT post.id, post.title, post.content, post.urlimage, post.createdat FROM post
+      SELECT post.id, post.title, post.content, post.urlImage, post.createdat FROM post
       LIMIT $1 OFFSET $2
       `,
       [limit, offset]
@@ -87,9 +86,9 @@ export class PostRepository implements IPostRepository {
   async search(term: string): Promise<PostSearchType[] | []> {
     const result = await database.clientInstance?.query(
       `
-      SELECT post.id, post.title, post.content
+      SELECT post.id, post.title
       FROM post
-      WHERE post.title ILIKE $1 OR post.content ILIKE $1
+      WHERE post.title ILIKE $1
       `,
       [`%${term}%`]
     );

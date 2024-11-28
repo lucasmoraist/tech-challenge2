@@ -18,7 +18,6 @@ export const searchPostSchema = {
           properties: {
             id: { type: "string", format: "uuid" },
             title: { type: "string" },
-            content: { type: "string" },
           },
         },
       },

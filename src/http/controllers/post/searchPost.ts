@@ -12,5 +12,6 @@ export async function Search(request: FastifyRequest, reply: FastifyReply) {
   const searchPostUseCase = makeSearchPostUseCase();
   const result = await searchPostUseCase.handler(term);
 
+  console.log("Data being sent to reply:", result);
   return reply.status(200).send(result);
 }
