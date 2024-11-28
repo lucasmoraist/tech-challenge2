@@ -14,12 +14,12 @@ export class UserRepository implements IUserRepository {
     return result?.rows[0];
   }
 
-  async create({ username, password }: User): Promise<User> {
+  async create({username, password, role }: User): Promise<User> {
     const result = await database.clientInstance?.query(
       `
-      INSERT INTO "user" (username, password) VALUES($1, $2) RETURNING *
+      INSERT INTO "user" (username, password, role) VALUES($1, $2, $3) RETURNING *
       `,
-      [username, password]
+      [username, password, role]
     );
 
     return result?.rows[0];

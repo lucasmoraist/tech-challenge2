@@ -28,10 +28,11 @@ export async function signin(request: FastifyRequest, reply: FastifyReply) {
 
   const token = await reply.jwtSign({ username });
 
+  const userId = user.id;
+
   const getNameTeacherUseCase = makeGetNameTeacherUseCase();
-  const teacherName = await getNameTeacherUseCase.handler(
-    user.id ? user.id : 0
-  );
+  const teacherName = await getNameTeacherUseCase.handler(userId);
+  
 
   return reply.status(200).send({
     user_id: user.id,

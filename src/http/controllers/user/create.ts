@@ -7,13 +7,14 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
     username: z.string(),
     password: z.string(),
+    role: z.enum(["teacher", "student"]),
   });
 
-  const { username, password } = registerBodySchema.parse(request.body);
+  const { username, password, role } = registerBodySchema.parse(request.body);
 
   const hashedPassword = await hash(password, 8);
 
-  const userWithHashedPassword = { username, password: hashedPassword };
+  const userWithHashedPassword = { username, password: hashedPassword, role };
 
   const createUserUseCase = makeCreateUserUseCase();
   const user = await createUserUseCase.handler(userWithHashedPassword);
