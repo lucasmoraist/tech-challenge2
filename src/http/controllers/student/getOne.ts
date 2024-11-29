@@ -4,14 +4,14 @@ import { z } from "zod";
 
 export async function getOne(req: FastifyRequest, res: FastifyReply) {
     const registerParamsSchema = z.object({
-        studentId: z.coerce.number(),
+        userId: z.coerce.number(),
     });
 
-    const { studentId } = registerParamsSchema.parse(req.params);
+    const { userId } = registerParamsSchema.parse(req.params);
 
     const getOneStudentUseCase = makeGetOneStudentUseCase();
 
-    const student = await getOneStudentUseCase.handler(studentId);
+    const student = await getOneStudentUseCase.handler(userId);
 
     return res.status(200).send(student);
 }

@@ -28,6 +28,7 @@ export class TeacherRepository implements ITeacherRepository {
           json_agg(
             json_build_object(
               'title', p.title, 
+              'urlImage', p.urlimage,
               'createdAt', p.createdAt
             )
           ) FILTER (WHERE p.id IS NOT NULL), '[]'

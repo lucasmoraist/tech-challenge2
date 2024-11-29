@@ -41,14 +41,14 @@ export class StudentRepository implements IStudentRepository {
       students: items.length > 0 ? items : [],
     };
   }
-  async getOne(studentId: number): Promise<IStudent | null> {
+  async getOne(userId: number): Promise<IStudent | null> {
     const result = await database.clientInstance?.query(
       `
         SELECT s.id, s.name
         FROM student s
-        WHERE s.id = $1
+        WHERE s.user_id = $1
     `,
-      [studentId]
+      [userId]
     );
 
     return result?.rows[0] || null;

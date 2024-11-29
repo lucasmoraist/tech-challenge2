@@ -19,7 +19,7 @@ export async function studentRoute(app: FastifyInstance) {
     getAll
   );
   app.get(
-    "/admin/student/:studentId",
+    "/admin/student/:userId",
     { onRequest: [jwtValidate], schema: getOneStudentSchema },
     getOne
   );
