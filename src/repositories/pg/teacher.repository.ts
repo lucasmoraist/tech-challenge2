@@ -27,6 +27,7 @@ export class TeacherRepository implements ITeacherRepository {
         COALESCE(
           json_agg(
             json_build_object(
+              'id', p.id,
               'title', p.title, 
               'urlImage', p.urlimage,
               'createdAt', p.createdAt
